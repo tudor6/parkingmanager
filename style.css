@@ -1,0 +1,361 @@
+/* ===== ParkingManager – foaie de stil ===== */
+/* Paleta de culori:
+   #1E3A5F  bleumarin  – meniu, subsol, titluri
+   #2E86DE  albastru   – butoane principale, linkuri
+   #F5A623  portocaliu – butoane de acțiune (accent)
+   #27AE60  verde      – locuri libere
+   #F4F6F9  gri deschis – fundal secțiuni
+   Fonturi: Poppins (titluri), Inter (text) */
+
+:root {
+  --pm-navy: #1E3A5F;
+  --pm-blue: #2E86DE;
+  --pm-accent: #F5A623;
+  --pm-green: #27AE60;
+  --pm-light: #F4F6F9;
+  --pm-red: #E74C3C;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: #2b2b2b;
+  background: #fff;
+}
+
+h1, h2, h3, .pm-logo {
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ---- Meniu ---- */
+.pm-navbar {
+  background: var(--pm-navy);
+  padding: 0.75rem 0;
+}
+
+.pm-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pm-logo-p {
+  background: var(--pm-blue);
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.pm-navbar .nav-link:hover,
+.pm-navbar .nav-link.active {
+  color: var(--pm-accent);
+}
+
+/* ---- Butoane ---- */
+.pm-btn-primary {
+  background: var(--pm-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.pm-btn-primary:hover {
+  background: #1f6fbf;
+  color: #fff;
+}
+
+.pm-btn-accent {
+  background: var(--pm-accent);
+  color: var(--pm-navy);
+  font-weight: 600;
+}
+
+.pm-btn-accent:hover {
+  background: #e0951a;
+  color: var(--pm-navy);
+}
+
+.pm-btn-outline {
+  border: 2px solid var(--pm-navy);
+  color: var(--pm-navy);
+  font-weight: 600;
+}
+
+.pm-btn-outline:hover {
+  background: var(--pm-navy);
+  color: #fff;
+}
+
+/* ---- Hero ---- */
+.pm-hero {
+  background: linear-gradient(135deg, var(--pm-navy) 0%, #2c5282 100%);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.pm-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pm-hero .lead {
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 1rem;
+}
+
+.pm-search-card {
+  background: #fff;
+  color: #2b2b2b;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pm-search-card h2 {
+  color: var(--pm-navy);
+  margin-bottom: 1rem;
+}
+
+/* ---- Statistici ---- */
+.pm-stats {
+  margin-top: -2rem;
+  position: relative;
+}
+
+.pm-stat {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.25rem 0.5rem;
+  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.12);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #5a6575;
+}
+
+.pm-stat-nr {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--pm-navy);
+}
+
+.pm-text-free {
+  color: var(--pm-green);
+}
+
+/* ---- Secțiuni ---- */
+.pm-section {
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+}
+
+.pm-section-title {
+  color: var(--pm-navy);
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pm-link {
+  color: var(--pm-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---- Carduri parcări ---- */
+.pm-card {
+  border: 1px solid #e3e8ef;
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.pm-card:hover {
+  box-shadow: 0 8px 24px rgba(30, 58, 95, 0.15);
+  transform: translateY(-3px);
+}
+
+.pm-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.pm-card-top h3 {
+  color: var(--pm-navy);
+  margin: 0;
+}
+
+.pm-card-addr {
+  color: #6b7685;
+  font-size: 0.9rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.pm-card-meta {
+  font-size: 0.9rem;
+  color: #5a6575;
+  margin: 0.75rem 0 1.25rem;
+  flex-grow: 1;
+}
+
+.pm-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+.pm-badge-free {
+  background: #e3f6eb;
+  color: var(--pm-green);
+}
+
+.pm-badge-few {
+  background: #fdecea;
+  color: var(--pm-red);
+}
+
+/* Bara de ocupare */
+.pm-bar {
+  height: 0.5rem;
+  background: var(--pm-light);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.pm-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--pm-blue);
+}
+
+.pm-fill-30 { width: 30%; }
+.pm-fill-65 { width: 65%; }
+.pm-fill-95 { width: 95%; background: var(--pm-red); }
+
+/* ---- Cum funcționează ---- */
+.pm-steps {
+  background: var(--pm-light);
+  padding: 3.5rem 0;
+  margin-top: 3rem;
+}
+
+.pm-steps h3 {
+  color: var(--pm-navy);
+}
+
+.pm-steps p {
+  color: #5a6575;
+}
+
+.pm-step-nr {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--pm-blue);
+  color: #fff;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Apel la cont ---- */
+.pm-cta {
+  background: #fff7e8;
+  border-left: 6px solid var(--pm-accent);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.pm-cta h2 {
+  color: var(--pm-navy);
+}
+
+/* ---- Subsol ---- */
+.pm-footer {
+  background: var(--pm-navy);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3rem 0 1.5rem;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.pm-footer h2 {
+  color: #fff;
+}
+
+.pm-footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.pm-footer a:hover {
+  color: var(--pm-accent);
+}
+
+.pm-copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---- Telefon ---- */
+@media (max-width: 767.98px) {
+  .pm-hero {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  .pm-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .pm-search-card {
+    padding: 1.25rem;
+  }
+
+  .pm-section-title {
+    font-size: 1.4rem;
+  }
+
+  .pm-cta {
+    padding: 1.5rem;
+  }
+
+  .pm-cta > div:last-child {
+    width: 100%;
+  }
+
+  .pm-cta .btn {
+    width: 100%;
+  }
+}

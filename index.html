@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkingManager – Rezervă-ți locul de parcare</title>
+  <meta name="description" content="ParkingManager – rezervă online un loc de parcare în Timișoara și vezi disponibilitatea în timp real.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== Meniu de navigare ===== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark pm-navbar">
+      <div class="container">
+        <a class="navbar-brand pm-logo" href="index.html"><span class="pm-logo-p">P</span> ParkingManager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#meniu"
+                aria-controls="meniu" aria-expanded="false" aria-label="Deschide meniul">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="meniu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Acasă</a></li>
+            <li class="nav-item"><a class="nav-link" href="parcari.html">Parcări</a></li>
+            <li class="nav-item"><a class="nav-link" href="rezervare.html">Rezervare</a></li>
+            <li class="nav-item"><a class="nav-link" href="cont.html">Contul meu</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.html">Administrare</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn pm-btn-accent" href="cont.html">Autentificare</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero + căutare rapidă ===== -->
+    <section class="pm-hero">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h1>Găsește și rezervă un loc de parcare în câteva secunde</h1>
+            <p class="lead">Vezi în timp real locurile libere din parcările din Timișoara, rezervă online și ai mereu la îndemână istoricul rezervărilor tale.</p>
+          </div>
+          <div class="col-lg-6">
+            <form class="pm-search-card" action="parcari.html">
+              <h2 class="h5">Caută un loc liber</h2>
+              <div class="mb-3">
+                <label for="zona" class="form-label">Zonă</label>
+                <select id="zona" class="form-select">
+                  <option>Centru</option>
+                  <option>Iosefin</option>
+                  <option>Fabric</option>
+                  <option>Complex Studențesc</option>
+                </select>
+              </div>
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <label for="data" class="form-label">Data</label>
+                  <input id="data" type="date" class="form-control" value="2026-11-20">
+                </div>
+                <div class="col-sm-6">
+                  <label for="ora" class="form-label">Ora sosirii</label>
+                  <input id="ora" type="time" class="form-control" value="09:00">
+                </div>
+              </div>
+              <button type="submit" class="btn pm-btn-accent w-100">Caută locuri libere</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Statistici rapide ===== -->
+    <section class="container pm-stats">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3"><div class="pm-stat"><span class="pm-stat-nr">6</span><span>parcări partenere</span></div></div>
+        <div class="col-6 col-md-3"><div class="pm-stat"><span class="pm-stat-nr pm-text-free">214</span><span>locuri libere acum</span></div></div>
+        <div class="col-6 col-md-3"><div class="pm-stat"><span class="pm-stat-nr">1.380</span><span>rezervări luna aceasta</span></div></div>
+        <div class="col-6 col-md-3"><div class="pm-stat"><span class="pm-stat-nr">5 lei</span><span>tarif de la / oră</span></div></div>
+      </div>
+    </section>
+
+    <!-- ===== Parcări disponibile (modulul Catalog) ===== -->
+    <section class="container pm-section">
+      <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2">
+        <h2 class="pm-section-title mb-0">Parcări disponibile acum</h2>
+        <a href="parcari.html" class="pm-link">Vezi toate parcările →</a>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="pm-card">
+            <div class="pm-card-top">
+              <h3 class="h5">Parcarea Piața Victoriei</h3>
+              <span class="pm-badge pm-badge-free">42 libere</span>
+            </div>
+            <p class="pm-card-addr">Bd. Revoluției din 1989 nr. 3, Centru</p>
+            <div class="pm-bar" role="img" aria-label="Grad de ocupare 65%"><span class="pm-bar-fill pm-fill-65"></span></div>
+            <p class="pm-card-meta">120 locuri · 8 lei/oră · deschis 24/7</p>
+            <a href="rezervare.html" class="btn pm-btn-primary w-100">Rezervă</a>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="pm-card">
+            <div class="pm-card-top">
+              <h3 class="h5">Parking Iulius Town</h3>
+              <span class="pm-badge pm-badge-few">9 libere</span>
+            </div>
+            <p class="pm-card-addr">Piața Consiliul Europei 2, Circumvalațiunii</p>
+            <div class="pm-bar" role="img" aria-label="Grad de ocupare 95%"><span class="pm-bar-fill pm-fill-95"></span></div>
+            <p class="pm-card-meta">180 locuri · 5 lei/oră · 07:00–23:00</p>
+            <a href="rezervare.html" class="btn pm-btn-primary w-100">Rezervă</a>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="pm-card">
+            <div class="pm-card-top">
+              <h3 class="h5">Parcarea Complex Studențesc</h3>
+              <span class="pm-badge pm-badge-free">63 libere</span>
+            </div>
+            <p class="pm-card-addr">Bd. Vasile Pârvan 12, Complex Studențesc</p>
+            <div class="pm-bar" role="img" aria-label="Grad de ocupare 30%"><span class="pm-bar-fill pm-fill-30"></span></div>
+            <p class="pm-card-meta">90 locuri · 5 lei/oră · deschis 24/7</p>
+            <a href="rezervare.html" class="btn pm-btn-primary w-100">Rezervă</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cum funcționează ===== -->
+    <section class="pm-steps">
+      <div class="container">
+        <h2 class="pm-section-title text-center">Cum funcționează</h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="pm-step-nr">1</div>
+            <h3 class="h5">Alegi parcarea</h3>
+            <p>Filtrezi după zonă, preț sau program și vezi câte locuri sunt libere.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="pm-step-nr">2</div>
+            <h3 class="h5">Rezervi intervalul</h3>
+            <p>Selectezi data, ora și numărul de înmatriculare. Primești un cod de rezervare.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="pm-step-nr">3</div>
+            <h3 class="h5">Parchezi liniștit</h3>
+            <p>Bariera citește numărul mașinii. Rezervarea apare în istoricul contului tău.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Apel la cont (modulul Conturi) ===== -->
+    <section class="container pm-section">
+      <div class="pm-cta">
+        <div>
+          <h2 class="h4">Ai deja cont?</h2>
+          <p class="mb-0">Intră în cont ca să vezi rezervările active și istoricul complet.</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="cont.html" class="btn pm-btn-accent">Autentificare</a>
+          <a href="cont.html" class="btn pm-btn-outline">Creează cont</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Subsol ===== -->
+  <footer class="pm-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <p class="pm-logo"><span class="pm-logo-p">P</span> ParkingManager</p>
+          <p>Platformă de rezervare și administrare a locurilor de parcare.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="h6">Pagini</h2>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="parcari.html">Parcări</a></li>
+            <li><a href="rezervare.html">Rezervare</a></li>
+            <li><a href="cont.html">Contul meu</a></li>
+            <li><a href="admin.html">Administrare</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h2 class="h6">Contact</h2>
+          <p>contact@parkingmanager.ro<br>0256 123 456<br>Timișoara</p>
+        </div>
+      </div>
+      <p class="pm-copy">© 2026 ParkingManager. Proiect realizat în scop didactic.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
